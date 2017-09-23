@@ -3,7 +3,6 @@ addons:
     packages:
       - cmake
       - doxygen
-      - libmaxminddb-dev
 
 # Enable C++ support
 language: cpp
