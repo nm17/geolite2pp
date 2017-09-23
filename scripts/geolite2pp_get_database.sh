@@ -32,7 +32,7 @@ if [ -x "${use_wget}" ]; then
 	echo "Trying ${use_wget}..."
 	${use_wget} --no-verbose --timestamping "${url}"
 	if [ $? -eq 0 -a -f ${filename} ]; then
-		rm -f ${database}
+		#rm -f ${database}
 		gunzip --verbose --keep ${filename}
 		echo "Done!"
 		exit 0
@@ -48,7 +48,7 @@ if [ -x "${use_curl}" ]; then
 	echo "Trying ${use_curl}..."
 	${use_curl} --fail --silent --remote-time --remote-name --time-cond ${filename} "${url}"
 	if [ $? -eq 0 -a -f ${filename} ]; then
-		rm -f ${database}
+		#rm -f ${database}
 		gunzip --verbose --keep ${filename}
 		echo "Done!"
 		exit 0
