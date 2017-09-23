@@ -15,6 +15,7 @@ compiler:
 # Build steps
 
 script:
-  - curl --fail --silent --remote-time --remote-name --time-cond GeoLite2-City.mmdb "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
+  - curl --fail --silent --remote-time --remote-name --time-cond GeoLite2-City.mmdb.gz "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
+  - gzip -d *.gz
   - cmake ${TRAVIS_BUILD_DIR} && make
 
