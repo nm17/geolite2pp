@@ -15,7 +15,6 @@ compiler:
 # Build steps
 
 script:
-  - chmod +x ${TRAVIS_BUILD_DIR}/scripts/geolite2pp_get_database.sh
-  - ${TRAVIS_BUILD_DIR}/scripts/geolite2pp_get_database.sh
+  - curl --fail --silent --remote-time --remote-name --time-cond GeoLite2-City.mmdb "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
   - cmake ${TRAVIS_BUILD_DIR} && make
 
